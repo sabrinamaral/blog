@@ -32,3 +32,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore devise secret on devise.rb
+/config/initializers/devise.rb
