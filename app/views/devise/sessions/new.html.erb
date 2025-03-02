@@ -1,26 +1,36 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="grid grid-cols-2">
+  <div class="bg-[#0d1b2a] h-screen"></div>
+  <div class="my-auto mx-16">
+    <div>
+      <p class="absolute inset-0 flex justify-center items-end pointer-events-none opacity-20 text-[#AAAFB4] text-[12em] font-bold overflow-hidden">@sabrinamaral</p>
+      <p class="absolute inset-0 flex justify-start mb-8 items-start pointer-events-none opacity-20 text-[#AAAFB4] text-[20em] font-bold overflow-hidden">@sabrinamaral</p>
     </div>
-  <% end %>
+    <div>
+      <h2 class="text-[3em] tracking-tight mb-6 text-[#0d1b2a] font-semibold">Log in</h2>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class:"space-y-6") do |f| %>
+      <div class="field">
+        <%= f.label :email, class: "text-md/6 font-medium text-gray-900" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-gray-600 sm:text-sm/6" %>
+      </div>
+
+      <div class="field mt-4">
+        <%= f.label :password, class: "text-md/6 font-medium text-gray-900" %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: "block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-gray-600 sm:text-sm/6" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field text-sm">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <div class="actions flex justify-center bg-gray-600 rounded-md py-1.5 mt-8 text-md/6 font-semibold text-white  hover:bg-gray-500 cursor-pointer">
+        <%= f.submit "Log in", class: "grow"%>
+      </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
