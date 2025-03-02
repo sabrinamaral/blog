@@ -1,0 +1,14 @@
+<nav class="bg-[#0d1b2a] h-[5em]">
+  <%# Sign in options %>
+    <% if user_signed_in? %>
+      <div class="flex justify-end">
+        <%= link_to "New Blog", new_blog_post_path, class: "rounded-full bg-gray-200 mt-6 mr-6 py-2 px-6 text-md text-[#0d1b2a] font-bold" %>
+        <%#= link_to "My Account", edit_user_registration_path %>
+        <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "rounded-full bg-gray-200 mt-6 mr-6 py-2 px-6 text-md text-[#0d1b2a] font-bold" %>
+      </div>
+        <%#else %>
+        <%# Sign out options  %>
+        <%#= link_to "Login", new_user_session_path %>
+        <%#= link_to "Sign Up", new_user_registration_path %>
+    <% end %>
+</nav>

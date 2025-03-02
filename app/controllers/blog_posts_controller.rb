@@ -1,5 +1,7 @@
 class BlogPostsController < ApplicationController
+  before_action :authenticate_user!, except: [ :show, :index ]
   before_action :set_blog_post, only: [ :show, :edit, :update, :destroy ]
+  before_action :show_navbar
   def index
     @blog_posts = BlogPost.all
   end
@@ -45,5 +47,9 @@ def set_blog_post
   @blog_post = BlogPost.find(params[:id])
 rescue ActiveRecord::RecordNotFound
   redirect_to root_path
+end
+
+def show_navbar
+  @show_navbar = true
 end
 end
