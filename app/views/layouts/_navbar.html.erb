@@ -1,14 +1,15 @@
-<nav class="bg-[#0d1b2a] h-[5em]">
+<nav class="bg-[#0d1b2a] h-[5em] w-full flex justify-between items-center">
+  <%= link_to "@sabrinamaral", root_path, class: "logo inline-flex self-center text-white decoration-none font-bold ml-8 text-[1.5em]" %>
+  <div class="flex">
   <%# Sign in options %>
     <% if user_signed_in? %>
-      <div class="flex justify-end">
-        <%= link_to "New Blog", new_blog_post_path, class: "rounded-full bg-gray-200 mt-6 mr-6 py-2 px-6 text-md text-[#0d1b2a] font-bold" %>
-        <%#= link_to "My Account", edit_user_registration_path %>
-        <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "rounded-full bg-gray-200 mt-6 mr-6 py-2 px-6 text-md text-[#0d1b2a] font-bold" %>
-      </div>
-        <%#else %>
-        <%# Sign out options  %>
-        <%#= link_to "Login", new_user_session_path %>
-        <%#= link_to "Sign Up", new_user_registration_path %>
+      <% if controller_name == 'blog_posts' && action_name == 'show' %>
+        <%= link_to "Edit Post", edit_blog_post_path(@blog_post), class: "rounded-full bg-gray-200 flex py-2 px-6 mr-8 text-md text-[#0d1b2a] font-bold hover:bg-gray-400" %>
+      <% end %>
+      <% if controller_name == 'blog_posts' && action_name == 'index' %>
+        <%= link_to "New Blog", new_blog_post_path, class: "rounded-full bg-gray-200 py-2 px-6 text-md text-[#0d1b2a] font-bold hover:bg-gray-400" %>
+        <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "rounded-full bg-gray-200 py-2 px-6 mx-4 text-md text-[#0d1b2a] font-bold hover:bg-gray-400" %>
+      <% end %>
     <% end %>
+  </div>
 </nav>

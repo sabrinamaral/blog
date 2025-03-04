@@ -1,13 +1,13 @@
-<div class="flex mx-12" >
+<div class="flex" >
   <div>
     <p class="absolute inset-0 flex justify-center items-end pointer-events-none opacity-20 text-[#cccfd2] text-[12em] font-bold overflow-hidden">rails</p>
     <p class="absolute inset-0 flex justify-start items-start pointer-events-none opacity-20 text-[#cccfd2] text-[20em] font-bold overflow-hidden">tech</p>
     <p class="absolute inset-0 flex justify-end mb-8 items-start pointer-events-none opacity-20 text-[#cccfd2] text-[32em] font-bold overflow-hidden">js</p>
   </div>
-  <div class="flex justify-evenly content-center flex-wrap h-[90dvh]">
+  <div class="flex-1 content-center flex-wrap h-[90dvh]">
     <% @blog_posts.each do |post|  %>
-    <div class="w-60 h-30 border-1 border-solid border-gray-400/60 rounded-[1em] mt-8 mb-8 mx-auto bg-[#cccfd2]">
-      <h2 class="text-[1.2em] capitalize font-mono text-gray-900 font-bold hover:underline text-center pt-8 px-4"><%= link_to post.title, post %></h2>
+    <div>
+      <h2 class="text-[1em] capitalize font-mono text-gray-900 font-bold bg-gray-300 hover:bg-gray-400 text-center w-2/10 mx-auto mb-4 rounded-md"><%= link_to post.title, post %></h2>
     </div>
     <% end %>
   </div>
