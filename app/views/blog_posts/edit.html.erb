@@ -1,3 +1,9 @@
-<h1>Edit Page</h1>
-<%= render partial: "form", locals: { blog_post: @blog_post } %>
-<%= button_to "Delete", blog_post_path(@blog_post), method: :delete, class: "bg-slate-600 py-2 px-4 rounded-full text-white", data: {turbo_confirm: "Are you sure?"} %>
+<div class="flex items-center justify-center my-10">
+  <h1 class="text-3xl font-bold text-gray-700">Edit Post</h1>
+</div><%= render partial: "form", locals: { blog_post: @blog_post } %>
+
+<%= form_with url: blog_post_path(@blog_post), method: :delete, class: "grid" do %>
+  <button type="submit" class="mx-auto my-5 w-3/5 bg-gray-500 text-white font-bold py-2 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2" data-turbo-confirm="Are you sure?">
+    Delete
+  </button>
+<% end %>
