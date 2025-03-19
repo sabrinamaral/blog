@@ -1,9 +1,9 @@
-<div class="w-4/6 mx-auto">
+<div class="max-w-4xl mx-auto px-4 py-8">
    <div>
     <p class="absolute inset-0 flex justify-center items-end pointer-events-none opacity-20 text-[#cccfd2] text-[12em] font-bold overflow-hidden">rails</p>
     <p class="absolute inset-0 flex justify-start items-start pointer-events-none opacity-20 text-[#cccfd2] text-[20em] font-bold overflow-hidden">tech</p>
     <p class="absolute inset-0 flex justify-end mb-8 items-start pointer-events-none opacity-20 text-[#cccfd2] text-[32em] font-bold overflow-hidden">js</p>
   </div>
-  <h1 class="text-[2em] my-8"><%= @blog_post.title %></h1>
-  <p class="text-base/8 text-[1.2em]"><%=  @blog_post.body %></p>
+  <h1 class="text-4xl font-bold my-6 px-4 leading-tight tracking-wide"><%= @blog_post.title %></h1>
+  <article class="text-base/8 text-[1.2em] prose px-4"><%=  @blog_post.body %></article>
 </div>
