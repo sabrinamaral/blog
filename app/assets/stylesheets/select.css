@@ -1,0 +1,12 @@
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  width: 100%;
+  height: 40px;
+  border: #99a1af solid 1px;
+  padding-left: 1em;
+  border-radius: 0.4em;
+  color: #1b1820;
+}
