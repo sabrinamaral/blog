@@ -5,10 +5,11 @@
     <p class="absolute inset-0 flex justify-end mb-8 items-start pointer-events-none opacity-20 text-[#cccfd2] text-[32em] font-bold overflow-hidden">js</p>
   </div>
 
-    <div class="grid grid-cols-2 mt-16 mx-8">
+    <h1 class="text-center font-bold text-[2.5em] text-[#0d1b2a] my-12">Articles</h1>
+    <div class="h-3/4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-12">
       <% @blog_posts.each do |post|  %>
       <% @blog_posts %>
-      <div class="flex content-center justify-between w-md mx-auto my-2 p-2 border rounded-lg border-gray-300 hover:bg-neutral-100">
+      <div class="flex justify-between my-2 mx-2 p-2 border rounded-lg border-gray-300 hover:bg-neutral-100">
         <div class="px-3">
           <p class="m-0 leading-6 font-bold capitalize"><%= link_to post.title, post %></p>
           <small class="text-gray-600">Some text here</small>
@@ -17,7 +18,7 @@
           <p class="text-gray-400 font-bold"><i class="fa-regular fa-clock"></i> <%= post.reading_time %> min</p>
           <a href="#" class="text-gray-600 ml-4 text-sm hover:text-gray-700"></a>
           <span>
-             <%# Render the icon based on the category %>
+          <%# Render the icon based on the category %>
           <% if post.category == "rails" %>
             <%= image_tag "rails_logo.png", alt: "Rails logo", class: "h-9 w-auto" %>
           <% elsif post.category == "javascript" %>
@@ -26,7 +27,6 @@
             <i class="fa-solid fa-globe fa-xl"></i>
           <% end %>
           </span>
-
         </div>
       </div>
       <% end %>
