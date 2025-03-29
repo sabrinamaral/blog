@@ -27,9 +27,9 @@ class BlogPostsController < ApplicationController
 
   def update
     if @blog_post.update(blog_post_params)
-      redirect_to @blog_post
+      redirect_to @blog_post, notice: "Category updated successfully."
     else
-      render :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity, alert: "Failed to update category."
     end
   end
 
@@ -40,7 +40,7 @@ class BlogPostsController < ApplicationController
 
   private
 def blog_post_params
-  params.required(:blog_post).permit(:title, :body)
+  params.required(:blog_post).permit(:title, :body, :category)
 end
 
 def set_blog_post
